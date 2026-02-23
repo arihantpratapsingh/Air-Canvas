@@ -1,0 +1,4 @@
+aircanvas_myvenv/
+venv/
+__pycache__/
+*.pyc
