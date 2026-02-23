@@ -145,6 +145,16 @@ RTC_CONFIGURATION = RTCConfiguration(
     {
         "iceServers": [
             {"urls": ["stun:stun.l.google.com:19302"]},
+            {
+                "urls": [
+                    "turn:global.relay.metered.ca:80",
+                    "turn:global.relay.metered.ca:80?transport=tcp",
+                    "turn:global.relay.metered.ca:443",
+                    "turns:global.relay.metered.ca:443?transport=tcp",
+                ],
+                "username": "1d9f12fc3001985bbaa7398d",
+                "credential": "OVdQ1exy6qjhkZ3L",
+            },
         ]
     }
 )
