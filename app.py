@@ -139,15 +139,21 @@ class AirCanvasProcessor(VideoProcessorBase):
 
 
 # Start WebRTC stream
+from streamlit_webrtc import RTCConfiguration
+
+RTC_CONFIGURATION = RTCConfiguration(
+    {
+        "iceServers": [
+            {"urls": ["stun:stun.l.google.com:19302"]},
+        ]
+    }
+)
+
 ctx = webrtc_streamer(
     key="air-canvas",
     video_processor_factory=AirCanvasProcessor,
     media_stream_constraints={"video": True, "audio": False},
-    rtc_configuration={
-        "iceServers": [
-            {"urls": ["stun:stun.l.google.com:19302"]},
-        ]
-    },
+    rtc_configuration=RTC_CONFIGURATION,
 )
 
 # Save Drawing Button
